@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admininfo.Info"
+    android:background="@color/grey">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/bar_rounded"
+        android:elevation="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="INFO"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textColor="@color/white"/>
+        <Button
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:id="@+id/back_home"
+            android:background="@drawable/arrow_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/info_data"
+            tools:listitem="@layout/card_info" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pb_data2"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
+
+</RelativeLayout>
